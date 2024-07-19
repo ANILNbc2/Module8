@@ -5,6 +5,11 @@ public class Cell {
     Integer rowNo;
     Integer columnNo;
 
+    public Cell(Integer rowNo, Integer columnNo){
+        this.rowNo = rowNo;
+        this.columnNo = columnNo;
+    }
+
     public Player getPlayer() {
         return player;
     }

@@ -1,6 +1,6 @@
 package code.tictactoe.models;
 
-public enum BotDifficulty {
+public enum BotDifficultyLevel {
     EASY,
     MEDIUM,
     HARD

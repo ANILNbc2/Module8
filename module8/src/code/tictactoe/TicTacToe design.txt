@@ -1,0 +1,16 @@
+
+1. There are no services and repositories as this is a offline game. So not needed.
+
+2. Person interacts by 1 by 1 giving inputs into the commandline and playing the game.
+
+3. A very very common error with all programming languages that support Null is NullPointerException.
+    So a rule of thumb, always create a constructor which initializes the class attributes.
+
+Q : Till when can we not play a game? ie how do we start ?
+    Lifecycle of a game.
+  a. Start a game. ie create a game object.
+    1. Create Players, choose symbols
+    2. Determine the size of board.
+    3. Determine the winning strategy.
+    4. Game class has a lot of attributes and many of the attributes requires validation. Hence go for builder.
+    5. Client interacts with Main, Main interacts with Controller and Controller interacts with Model.
