@@ -34,4 +34,9 @@ public class Board {
     public void setBoardState(List<List<Cell>> boardState) {
         this.boardState = boardState;
     }
+
+    public Cell getCell(Integer row, Integer column){
+        return boardState.get(row).get(column);
+    }
+
 }

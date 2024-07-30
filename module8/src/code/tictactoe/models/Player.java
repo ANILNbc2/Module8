@@ -1,5 +1,7 @@
 package code.tictactoe.models;
 
+import java.util.Scanner;
+
 public class Player {
     Symbol symbol;
     String name;
@@ -27,5 +29,18 @@ public class Player {
 
     public void setPlayerType(PlayerType playerType) {
         this.playerType = playerType;
+    }
+
+    public Move makeMove(Board board){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What row : ? ");
+        Integer row = scanner.nextInt();
+
+        System.out.println("What Column : ? ");
+        Integer column = scanner.nextInt();
+
+        Move move = new Move(row, column, this);
+
+        return move;
     }
 }

@@ -62,6 +62,11 @@ public class Main {
                     setGameWinningStrategies(winningStrategyNameList).
                     setPlayerList(players).
                     build();
+
+            while (game.getGameStatus().equals(GameStatus.IN_PROGRESS)){
+                game.makeMove();
+            }
+
         } catch (DuplicateSymbolException e) {
             throw new RuntimeException(e);
         } catch (NotEnoughPlayersException e) {

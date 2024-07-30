@@ -1,18 +1,37 @@
 package code.tictactoe.models;
 
 public class Move {
-    Cell cell;
+    Integer row;
+    Integer column;
+    Player player;
 
-    public Move(Cell cell, Player player){
-        this.cell = cell;
-        this.cell.setPlayer(player);
+    public Move(Integer row, Integer column, Player player){
+        this.row = row;
+        this.column = column;
+        this.player = player;
     }
 
-    public Cell getCell() {
-        return cell;
+    public Integer getRow() {
+        return row;
     }
 
-    public void setCell(Cell cell) {
-        this.cell = cell;
+    public void setRow(Integer row) {
+        this.row = row;
+    }
+
+    public Integer getColumn() {
+        return column;
+    }
+
+    public void setColumn(Integer column) {
+        this.column = column;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 }

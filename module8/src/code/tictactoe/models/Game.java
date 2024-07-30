@@ -5,6 +5,7 @@ import code.tictactoe.strategy.winningstrategy.GameWinningStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 //Game class has a lot of attributes and many of the attributes requires validation. Hence go for builder.
@@ -20,6 +21,21 @@ public class Game {
     private Game(){
     }
 
+    public void makeMove(){
+        this.lastPlayerIndex = (this.lastPlayerIndex+1)%playerList.size();
+
+        Move potentialMove = playerList.get(this.lastPlayerIndex).makeMove(this.board);
+        if(
+                Objects.nonNull(
+                        this.board.getCell(potentialMove.getRow(), potentialMove.getColumn()).getPlayer())
+        ){
+            System.out.println("Bad move, try again");
+            return;
+        }
+
+        this.moves.add(potentialMove);
+        this.board.getCell(potentialMove.getRow(), potentialMove.getColumn()).setPlayer(potentialMove.getPlayer());
+    }
     public Game(GameBuilderFactory builder){
         setGameStatus(GameStatus.IN_PROGRESS);
         setPlayerList(builder.getPlayerList());

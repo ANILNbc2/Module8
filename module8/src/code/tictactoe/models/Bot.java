@@ -1,5 +1,6 @@
 package code.tictactoe.models;
 
+import code.tictactoe.factories.BotPlayingStrategyFactory;
 import code.tictactoe.strategy.botplayingstrategy.BotPlayingStrategy;
 
 public class Bot extends Player{
@@ -13,6 +14,8 @@ public class Bot extends Player{
 
     public Bot(BotDifficultyLevel botDifficultyLevel){
         this.botDifficultyLevel = botDifficultyLevel;
+        this.botPlayingStrategy =
+                BotPlayingStrategyFactory.getBotPlayingStrategyByDifficultyLevel(botDifficultyLevel);
     }
 
     public BotDifficultyLevel getBotDifficulty() {
@@ -29,5 +32,10 @@ public class Bot extends Player{
 
     public void setBotPlayingStrategy(BotPlayingStrategy botPlayingStrategy) {
         this.botPlayingStrategy = botPlayingStrategy;
+    }
+
+    @Override
+    public Move makeMove(Board board){
+        return botPlayingStrategy.makeMove(board);
     }
 }
